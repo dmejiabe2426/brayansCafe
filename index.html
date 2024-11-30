@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryan's Café</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <img src="../images/logo.webp" alt="Bryan's Café Logo" class="cafe-logo">
+            <h1>Bryan's Café</h1>
+        </div>
+    </header>
+
+    <div class="menu" id="menu-container">
+        <!-- TBD -->
+    </div>
+
+    <div class="barista-gif" id="barista-gif">
+        <img src="../images/barista.gif" alt="Barista making a coffee latte">
+        <audio id="background-music" autoplay loop controls>
+            <source src="../audio/making-a-coffee-latte.mp3" type="audio/mp3">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </div>
+
+    <footer>
+        <p>Thank you for coming to Bryan's Café!</p>
+    </footer>
+
+
+
+    <script>
+        // Load the menu from XML file
+        fetch('menu.xml')
+            .then(response => response.text())
+            .then(str => {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(str, "text/xml");
+                const items = xmlDoc.getElementsByTagName("item");
+                const menuContainer = document.getElementById('menu-container');
+
+                Array.from(items).forEach(item => {
+                    const name = item.getElementsByTagName("name")[0].textContent;
+                    const price = item.getElementsByTagName("price")[0].textContent;
+                    const description = item.getElementsByTagName("description")[0].textContent;
+                    const image = item.getElementsByTagName("image")[0].textContent;
+
+                    const menuItem = document.createElement('div');
+                    menuItem.classList.add('menu-item');
+
+                    menuItem.innerHTML = `
+                        <img src="${image}" alt="${name}">
+                        <h3>${name}</h3>
+                        <p>${description}</p>
+                        <p class="price">${price}</p>
+                    `;
+                    menuContainer.appendChild(menuItem);
+                });
+            })
+            .catch(error => console.error('Something was wrong with:', error));
+    </script>
+
+</body>
+</html>
