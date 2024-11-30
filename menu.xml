@@ -4,24 +4,24 @@
         <name>Beetroot and feta salad</name>
         <price>$15.00</price>
         <description>Suitable for vegetarians, made with fresh beetroot.</description>
-        <image>..\images\Beetroot_and_feta_salad.webp</image>
+        <image>images/Beetroot_and_feta_salad.webp</image>
     </item>
     <item>
         <name>Sourdough Rye Sandwich</name>
         <price>$18.00</price>
         <description>Cheese and salad sandwich made with organic, sourdough rye bread</description>
-        <image>..\images\Sourdough_Rye_Sandwich.webp</image>
+        <image>images/Sourdough_Rye_Sandwich.webp</image>
     </item>
     <item>
         <name>Spinach Pie and Salad</name>
         <price>$20.00</price>
         <description>Tasty pie with salad</description>
-        <image>..\images\Spinach_Pie_and_Salad.webp</image>
+        <image>images/Spinach_Pie_and_Salad.webp</image>
     </item>
     <item>
         <name>Feta pancakes with salad</name>
         <price>$19.50</price>
         <description>Tasty pancake filled with feta and salad.</description>
-        <image>..\images\Feta_pancakes_with_salad.webp</image>
+        <image>images/Feta_pancakes_with_salad.webp</image>
     </item>
 </menu>
